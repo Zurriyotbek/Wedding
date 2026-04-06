@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To'y Taklifnomasi — Aziz & Malika to'yi!</title>
+    <meta name="description"
+        content="Bizning to'y marosimimizga taklif etamiz! Barcha tafsilotlar va RSVP uchun veb-saytimizga tashrif buyuring.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Welcome Splash Overlay -->
+    <div class="splash-overlay" id="splashOverlay">
+        <div class="splash-bg"></div>
+        <div class="splash-content">
+            <div class="splash-ornament-top">
+                <svg viewBox="0 0 200 40" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.4">
+                    <path d="M0 20 Q25 5, 50 20 Q75 35, 100 20 Q125 5, 150 20 Q175 35, 200 20" />
+                </svg>
+            </div>
+            <p class="splash-subtitle">To'y taklifnomasi</p>
+            <div class="splash-names">Aziz & Malika</div>
+            <div class="splash-date">15.05.2026</div>
+            <div class="splash-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M10 12l-6-5v10z" />
+                    <path d="M14 12l6-5v10z" />
+                    <circle cx="12" cy="12" r="2" />
+                </svg>
+            </div>
+            <button class="splash-enter-btn" id="splashEnterBtn">
+                <span>Taklifnomani ochish</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" />
+                </svg>
+            </button>
+            <p class="splash-music-hint">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14">
+                    <path d="M9 18V5l12-2v13" />
+                    <circle cx="6" cy="18" r="3" />
+                    <circle cx="18" cy="16" r="3" />
+                </svg>
+                Musiqa bilan
+            </p>
+            <div class="splash-ornament-bottom">
+                <svg viewBox="0 0 200 40" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.4">
+                    <path d="M0 20 Q25 5, 50 20 Q75 35, 100 20 Q125 5, 150 20 Q175 35, 200 20" />
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <!-- YouTube Player (hidden) -->
+    <div id="ytPlayerContainer"
+        style="position:fixed;top:-9999px;left:-9999px;width:1px;height:1px;overflow:hidden;pointer-events:none;"></div>
+
+    <!-- Floating Petals Animation -->
+    <div class="petals-container" id="petalsContainer"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-brand">
+            <span>Aziz & Malika</span>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Menyu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#hero">Bosh sahifa</a></li>
+            <li><a href="#details">Dastur</a></li>
+            <li><a href="#gallery">Galereya</a></li>
+            <li><a href="#rsvp">Tilak</a></li>
+            <li><a href="#toyona">Hadya</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-ornament top-left"></div>
+        <div class="hero-ornament top-right"></div>
+        <div class="hero-ornament bottom-left"></div>
+        <div class="hero-ornament bottom-right"></div>
+        <div class="hero-content">
+            <p class="hero-subtitle animate-on-scroll">Taklif etamiz</p>
+            <div class="hero-names animate-on-scroll">
+                <span class="groom-name">Aziz</span>
+                <div class="and-symbol">
+                    <svg class="heart-svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                </div>
+                <span class="bride-name">Malika</span>
+            </div>
+            <div class="hero-line animate-on-scroll"></div>
+            <p class="hero-date animate-on-scroll">2026-yil, 15-may</p>
+            <p class="hero-location animate-on-scroll">Toshkent shahri</p>
+            <a href="#rsvp" class="hero-btn animate-on-scroll">Tilak qoldiring</a>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section class="countdown-section" id="countdown">
+        <div class="section-ornament"></div>
+        <h2 class="section-title animate-on-scroll">To'ygacha qolgan vaqt</h2>
+        <div class="countdown-timer animate-on-scroll">
+            <div class="countdown-item">
+                <div class="countdown-number" id="days">00</div>
+                <div class="countdown-label">Kun</div>
+            </div>
+            <div class="countdown-separator">:</div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="hours">00</div>
+                <div class="countdown-label">Soat</div>
+            </div>
+            <div class="countdown-separator">:</div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="minutes">00</div>
+                <div class="countdown-label">Daqiqa</div>
+            </div>
+            <div class="countdown-separator">:</div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="seconds">00</div>
+                <div class="countdown-label">Soniya</div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Event Details Section -->
+    <section class="details-section" id="details">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">To'y Dasturi</h2>
+            <p class="section-subtitle animate-on-scroll">2026-yil, 15-may</p>
+            <div class="details-grid details-grid-2">
+                <div class="detail-card animate-on-scroll">
+                    <div class="detail-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
+                                fill="currentColor" stroke="none" />
+                        </svg>
+                    </div>
+                    <h3>Nahorgi osh 🍚</h3>
+                    <div class="detail-info">
+                        <p class="detail-time">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                class="inline-icon">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>
+                            Soat 07:00
+                        </p>
+                        <p class="detail-place">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                class="inline-icon">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                            Toshkent shahri
+                        </p>
+                    </div>
+                    <p class="detail-desc">Nahorgi osh soat 07:00 da boshlanadi. Barcha mehmonlarni o'z vaqtida
+                        kelishlarini so'raymiz.</p>
+                </div>
+
+                <div class="detail-card animate-on-scroll">
+                    <div class="detail-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg>
+                    </div>
+                    <h3>Kuyov navkar 🎊</h3>
+                    <div class="detail-info">
+                        <p class="detail-time">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                class="inline-icon">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>
+                            Soat 13:00
+                        </p>
+                        <p class="detail-place">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                class="inline-icon">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                            Toshkent shahri
+                        </p>
+                    </div>
+                    <p class="detail-desc">Kuyov navkar soat 13:00 da boshlanadi. Do'stlar va qadrdonlar kutiladi!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Galereya 📸</h2>
+            <p class="section-subtitle animate-on-scroll">Eng go'zal lahzalar</p>
+            <div class="gallery-grid">
+                <div class="gallery-item large animate-on-scroll" onclick="openLightbox(0)">
+                    <img src="images/couple.png" alt="Kelin va kuyov" loading="lazy">
+                </div>
+                <div class="gallery-item animate-on-scroll" onclick="openLightbox(1)">
+                    <img src="images/rings.png" alt="Uzuklar" loading="lazy">
+                </div>
+                <div class="gallery-item animate-on-scroll" onclick="openLightbox(2)">
+                    <img src="images/bouquet.png" alt="Gul dasta" loading="lazy">
+                </div>
+                <div class="gallery-item animate-on-scroll" onclick="openLightbox(3)">
+                    <img src="images/venue.png" alt="To'yxona" loading="lazy">
+                </div>
+                <div class="gallery-item animate-on-scroll" onclick="openLightbox(4)">
+                    <img src="images/hands.png" alt="Qo'l ushlashish" loading="lazy">
+                </div>
+                <div class="gallery-item animate-on-scroll" onclick="openLightbox(5)">
+                    <img src="images/cake.png" alt="To'y torti" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox-overlay" id="lightboxOverlay" onclick="closeLightbox()">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <button class="lightbox-nav lightbox-prev" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</button>
+        <img class="lightbox-img" id="lightboxImg" src="" alt="Gallery image" onclick="event.stopPropagation()">
+        <button class="lightbox-nav lightbox-next" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</button>
+    </div>
+
+    <!-- RSVP / Tilak Section -->
+    <section class="rsvp-section" id="rsvp">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Tilak qoldiring</h2>
+            <p class="section-subtitle animate-on-scroll">Yangi oilaga eng go'zal tilaklaringiz</p>
+            <div class="rsvp-form-container animate-on-scroll">
+                <form class="rsvp-form" id="rsvpForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullname">Ismingiz</label>
+                            <input type="text" id="fullname" name="fullname" placeholder="To'liq ismingiz" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefon raqami</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+998 90 123 45 67" maxlength="17"
+                                autocomplete="tel">
+                            <span class="phone-error" id="phoneError">To'g'ri raqam kiriting: +998 XX XXX XX XX</span>
+                        </div>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="message">Tilagingiz ✨</label>
+                        <textarea id="message" name="message" placeholder="Yangi oilaga tilaklaringiz..." rows="4"
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="rsvp-btn" id="submitBtn">
+                        <span class="btn-text">Tilak yuborish</span>
+                        <span class="btn-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13" />
+                                <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                            </svg>
+                        </span>
+                    </button>
+                </form>
+                <div class="rsvp-success" id="rsvpSuccess">
+                    <div class="success-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                        </svg>
+                    </div>
+                    <h3>Rahmat!</h3>
+                    <p>Tilagingiz qabul qilindi. Sizni kutib qolamiz! 🎉</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wishes Wall -->
+    <section class="wishes-section" id="wishes">
+        <div class="container wishes-container">
+            <div class="wishes-header" style="position: relative; z-index: 2;">
+                <h2 class="section-title animate-on-scroll">Tabriklar devori</h2>
+                <p class="section-subtitle animate-on-scroll wishes-empty-hint" id="wishesEmptyHint">Hali tilaklar yo'q. Birinchi bo'ling! 🌹</p>
+            </div>
+            <div class="wishes-grid" id="wishesGrid" style="position: relative; z-index: 2;">
+                <!-- Tilaklar JavaScript orqali yuklanadi -->
+            </div>
+            <div class="wishes-footer" style="text-align: center; margin-top: 32px; position: relative; z-index: 2;">
+                <button id="loadMoreWishesBtn" class="rsvp-btn" style="display: none; width: auto; padding: 12px 32px;">
+                    <span class="btn-text">Yana ko'rish</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hadya / Payment Section -->
+    <section class="toyona-section" id="toyona">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Hadya 💝</h2>
+            <p class="section-subtitle animate-on-scroll">Hadya yuborish uchun qulay usulni tanlang</p>
+            <div class="toyona-grid animate-on-scroll">
+                <a href="https://payme.uz" target="_blank" rel="noopener" class="toyona-card payme-card">
+                    <div class="toyona-logo">
+                        <svg viewBox="0 0 60 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="0" y="20" font-size="20" font-weight="700" fill="white"
+                                font-family="Arial">Payme</text>
+                        </svg>
+                    </div>
+                    <p class="toyona-desc">Payme orqali hadya yuborish</p>
+                    <div class="toyona-arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M7 17L17 7M17 7H7M17 7V17" />
+                        </svg>
+                    </div>
+                </a>
+                <a href="https://click.uz" target="_blank" rel="noopener" class="toyona-card click-card">
+                    <div class="toyona-logo">
+                        <svg viewBox="0 0 60 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="0" y="20" font-size="20" font-weight="700" fill="white"
+                                font-family="Arial">Click</text>
+                        </svg>
+                    </div>
+                    <p class="toyona-desc">Click orqali hadya yuborish</p>
+                    <div class="toyona-arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M7 17L17 7M17 7H7M17 7V17" />
+                        </svg>
+                    </div>
+                </a>
+            </div>
+            <div class="card-number-box animate-on-scroll">
+                <p class="card-label">Yoki karta raqamiga o'tkazishingiz mumkin:</p>
+                <div class="card-number" id="cardNumber">
+                    <span>8600 •••• •••• ••••</span>
+                    <button class="copy-btn" id="copyCardBtn" title="Nusxa olish">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-names">Aziz & Malika</div>
+            <p class="footer-date">15.05.2026</p>
+            <p class="footer-text">Sizni kutib qolamiz!</p>
+            <div class="footer-ornament">
+                <svg viewBox="0 0 200 20" fill="none" stroke="currentColor" stroke-width="1">
+                    <path d="M0 10 Q50 0, 100 10 Q150 20, 200 10" opacity="0.3" />
+                </svg>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Music Toggle -->
+    <button class="music-toggle" id="musicToggle" aria-label="Musiqa">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="music-on">
+            <path d="M9 18V5l12-2v13" />
+            <circle cx="6" cy="18" r="3" />
+            <circle cx="18" cy="16" r="3" />
+        </svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="music-off"
+            style="display:none">
+            <path d="M9 18V5l12-2v13" />
+            <circle cx="6" cy="18" r="3" />
+            <circle cx="18" cy="16" r="3" />
+            <line x1="1" y1="1" x2="23" y2="23" stroke-width="2.5" />
+        </svg>
+    </button>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-database-compat.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
